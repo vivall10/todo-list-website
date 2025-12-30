@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My To-Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="title-group">
+        <div class="title">
+          My To-Do List
+          <span class="title-pill">Focus Mode</span>
+        </div>
+        <p class="subtitle">Add tasks, set optional due dates, and track your progress.</p>
+      </div>
+      <div class="today">
+        <span class="date" id="today-date"></span>
+        <span id="today-weekday"></span>
+      </div>
+    </header>
+
+    <form class="todo-form" id="todo-form">
+      <div class="field-wrapper">
+        <span>Task</span>
+        <input
+          type="text"
+          id="todo-input"
+          class="todo-input"
+          placeholder="What do you want to get done?"
+          autocomplete="off"
+          required
+        />
+      </div>
+      <div class="field-wrapper">
+        <span>Due</span>
+        <input
+          type="date"
+          id="date-input"
+          class="date-input"
+        />
+      </div>
+      <button type="submit" class="add-btn">
+        <span>＋</span>
+        Add
+      </button>
+    </form>
+
+    <section class="card">
+      <ul class="todo-list" id="todo-list"></ul>
+
+      <div class="empty-state" id="empty-state">
+        <span>📝</span>
+        No tasks yet. Add your first one above!
+      </div>
+
+      <footer class="card-footer">
+        <div class="items-left" id="items-left">0 tasks</div>
+        <div class="filters">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="active">Active</button>
+          <button type="button" class="filter-btn" data-filter="completed">Done</button>
+        </div>
+        <button type="button" class="clear-btn" id="clear-completed">
+          Clear completed
+        </button>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
